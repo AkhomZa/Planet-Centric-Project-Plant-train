@@ -40,6 +40,10 @@
 
 - **Lithium Charging module:** USB TYPE-C charger TP4056 1A (สำหรับชาร์จแบตเตอรี่ลิเธียม 18650)
 
+- **Micro switch**
+
+- **Resistor:** 10K (สำหรับต่อ microswitch เพราะ ESP32 C3 ไม่มี Internal Pullup ในตัว)
+- 
 **"On Water station"**
 
 - **Microcontroller:** Arduino Uno
