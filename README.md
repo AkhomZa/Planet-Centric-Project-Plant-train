@@ -16,31 +16,40 @@
 
 ![Plant train](picture/plant_train.png)
 
+## Water station
+
+![Water station](picture/water_station.png)
+
+## Water station
+![Water station](picture/Overview-wiring-diagram.jpg)
+
 ## Electronics Component
 
 **"On Plant train"**
 
 
-**Microcontroller:** ESP32 C3 mini
+- **Microcontroller:** ESP32 C3 mini
 
-**Motor Driver:** DRV8833
+- **Motor Driver:** DRV8833
 
-**Lux sensor:** BH1750 (วัดความเข้มของแสง)
+- **Lux sensor:** BH1750 (วัดความเข้มของแสง)
 
-**Color sensor:** TCS34725 (สำหรับอ่านแถบสีคำสั่ง)
+- **Color sensor:** TCS34725 (สำหรับอ่านแถบสีคำสั่ง)
 
-**I2C Multiplexer:** TCA9548A (สำหรับขยายช่องสัญญาณ I2C)
+- **I2C Multiplexer:** TCA9548A (สำหรับขยายช่องสัญญาณ I2C)
 
-**Lithium Charging module:** USB TYPE-C charger TP4056 1A (สำหรับชาร์จแบตเตอรี่ลิเธียม 18650)
+- **Lithium Charging module:** USB TYPE-C charger TP4056 1A (สำหรับชาร์จแบตเตอรี่ลิเธียม 18650)
 
 **"On Water station"**
 
-**Microcontroller:** Arduino Uno
+- **Microcontroller:** Arduino Uno
 
-**Water level non contack sensor:** XKCY25 (วัดระดับน้ำแบบไร้สัมผัส)
+- **Water level non contack sensor:** XKCY25 (วัดระดับน้ำแบบไร้สัมผัส)
 
-**Hall effect magnetic sensor:** KY-035 (สำหรับตรวจเช็คการมาของรถไฟ)
+- **Hall effect magnetic sensor:** KY-035 (สำหรับตรวจเช็คการมาของรถไฟ)
 
-**Relay module:** 4 channel-Relay
+- **Relay module:** 4 channel-Relay
+
+
 
 
