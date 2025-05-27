@@ -1,4 +1,4 @@
-# Planet-Centric-Project-Plant-train
+# Planet Centric : Project Plant train
 โปรเจคนี้เป็นของวิชา FRA503 : PLANET-CENTRIC ROBOTICS &amp; INNOVATION
 
 ผูัจัดทำ : อาคม สนธิขันธ์
