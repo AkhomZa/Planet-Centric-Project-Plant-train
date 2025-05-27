@@ -73,6 +73,7 @@
 ## อุปกรณ์ที่เหลือ
 
 - กระถางรดน้ำเอง แบบใช้หลักการกาลักน้ำ
+- สายยางซิลิโคน ID 7 mm
 
 ## ภาพ CAD การประกอบคร่าวๆ และส่วนประกอบ
 
@@ -87,6 +88,8 @@
 ![Wheel set assembly](picture/wheel_set.png)
 
 ![Base with wheel set assembly](picture/base-with-wheel-set.png)
+
+- ประกอบ wheel set กับ base ด้วยสกรู M3*10 mm มันจะยึดไม่แน่นเพื่อให้รถสามารถเลี้ยวได้ สามารถเพิ่มเติมด้วยการใส่ น้ำยาล็อกเกลียวเพิ่ม เพื่อให้สกรูไม่คลาย หรือออกแบบใหม่ให้ดีขึ้น
 
 ![Base with motor driver/magnet/color sensor holder](picture/base-motor-drive-holder-color-sensor-holder-magnet-holder.png)
 
@@ -106,6 +109,13 @@
 **ข้อสังเกตและการแนะนำ**
 - รูขนาดประมาณ 4.5 mm สำหรับใส่ heat brass insert
 - เริ่มประกอบจาก wheel set ก่อน ประกอบที่ล็อกมอเตอร์ และปิดป้ายด้วย X beam เชื่อม Wheel set 2 ชุดเข้าด้วยกัน
+
+![Water station](picture/water_station.png)
+
+- ประกอบกับรางตรงเฉพาะแบบในรูปเท่านั้น
+- ติดตั้ง relay และ arduino uno ก่อน ตามด้วยประกอบชั้นสองตาม
+- ประกอบ servo โดยเซ็ตตำแหน่ง 0 องศาก่อน แล้วเลื่อน rack gear เข้าไป จุดท้ายประกอบ pinion gear ตามเข้าไป
+  *จำเป็นออกแบบตัวติดตั้ง Hall effect magnetic sensor ใหม่
 
 ## Code สำหรับตัวรถ
 
@@ -628,9 +638,74 @@ void followLight() {
 
 ```
 
+## Code สำหรับตัวสถานี
 
+```bash
+int halSensor = A5;  //halSensor pin
+int waterSensor = A0;
+int relay = 7;
+int val;         //numeric variable
+int kep_water = 1;
+bool detecting = false;
+#include <Servo.h>
+Servo myservo;  //ตัวแปรแทน Servo
+void setup() {
 
+	Serial.begin(115200);
+	pinMode(halSensor, INPUT);  //hal halSensor
+	pinMode(waterSensor, INPUT);
+	pinMode(relay, OUTPUT);
 
+	myservo.attach(9);
+	myservo.write(0);  // หมุนออก
+	delay(1000);
+
+	digitalWrite(relay,HIGH);
+
+	// myservo.detach();
+	// delay(1000);
+	// Serial.println(myservo.read());
+	// myservo.attach(9);
+	// Serial.println(myservo.read());
+	// myservo.write(50);  // หมุนเก็บ
+	// delay(2500);
+	// Serial.println(myservo.read());
+	// myservo.detach();
+	
+}
+
+void loop() { // 0-70
+	Serial.println(digitalRead(waterSensor));
+	int state = 0;
+
+	if (abs(analogRead(halSensor)-810) < 30){
+		// myservo.write(70);  // หมุนออก
+		Serial.println("yes");
+		delay(3000);
+		if (abs(analogRead(halSensor)-810) < 30){
+			myservo.write(80);
+			delay(1000);
+			int state = digitalRead(waterSensor);
+			delay(1000);
+			myservo.write(0);
+			delay(1000);
+			if (state == 0){
+				delay(9000);
+			}
+			else if(state == 1) {
+				digitalWrite(relay,LOW);
+				delay(5000);
+				digitalWrite(relay,HIGH);
+				delay(4000);
+			}
+		}
+	}
+	else if (analogRead(halSensor) < 700){
+		myservo.write(0);
+	}
+	delay(500);
+}
+```
 
 **ฟังก์ชั่นการทำงาน ตอนนี้**
 - ตรวจหาทิศทางของแสงแล้ววิ่งไป
@@ -646,6 +721,6 @@ void followLight() {
 - เนื่องจากผู้จัดทำใช้สายไฟขนาด 30 AWG ซึ่งบางจุดมีกระแสเยอะ ทำให้แรงดันตก พิจารณาเปลี่ยนสายไฟที่เลี้ยงวงจรทั้งหมดและเลี้ยงมอเตอร์ให้มีจนาดใหญ่ขึ้น
 - มอเตอร์ยังไม่ได้บัดกรีสายไฟ เป็นเพียงการพันรอบขั้วมอเตอร์แล้วติดกาวทับเท่านั้น แนะนำว่าบัดกรีก่อนแล้วติดกาวซ้ำเพื่อกันสายขาดบริเวณขั้ว
 - เนื่องจากงานนี้เป็น Prototype แผงวงจรจึงเป็นบอร์ดไข่ปลา สามารถออกแบบเป็น PCB สำเร็จรูปเพื่อความคงทน เสถียรและประหยัดพื้นที่
-- เพิ่มขนาดแหล่งพลังงาน หรือเปลี่ยน microcontroller เพื่อทำให้กินพลังงานน้อยลง
+- เพิ่มขนาดแหล่งพลังงาน หรือเปลี่ยน microcontroller เพื่อทำให้กินพลังงานน้อยลง หรือออกแบบรางที่สามารถจ่ายไฟได้
 - สถานีน้ำ การตรวจสอบรถที่เข้ามาด้วย Hall effect magnetic sensor ยังไม่สเถียร เนื่องจากการออกแบบที่ยึดไม่ดี
 - ไม่มี swtich เปิด-ปิดไฟเลี้ยงอุปกรณ์ ทำให้ไม่สามารถชาร์จแบตเตอรี่ได้
