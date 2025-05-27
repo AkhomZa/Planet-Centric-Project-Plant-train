@@ -74,6 +74,18 @@
 
 - กระถางรดน้ำเอง แบบใช้หลักการกาลักน้ำ
 
+## ภาพ CAD การประกอบคร่าวๆ และส่วนประกอบ
 
+![Explode view of wheel set](picture/explode-wheel-set.png)
+
+![Wheel set assembly](picture/wheel_set.png)
+
+![Base with wheel set assembly](picture/base-with-wheel-set.png)
+
+![Base with motor driver/magnet/color sensor holder](picture/base-motor-drive-holder-color-sensor-holder-magnet-holder.png)
+
+![Pot holder with watering tray on top base](picture/pot-holder-stand-and-water-tray.png)
+
+![battery holder on the back and charger case](picture/Lithium-battery-holder-and-charger-case.png)
 
 
