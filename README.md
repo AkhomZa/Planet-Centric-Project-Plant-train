@@ -117,6 +117,8 @@
 - ประกอบ servo โดยเซ็ตตำแหน่ง 0 องศาก่อน แล้วเลื่อน rack gear เข้าไป จุดท้ายประกอบ pinion gear ตามเข้าไป
   *จำเป็นออกแบบตัวติดตั้ง Hall effect magnetic sensor ใหม่
 
+![Explode view Water station](picture/explode-water-station.png)
+
 ## Code สำหรับตัวรถ
 
 ก่อน upload เช็คหัวข้อ USB CDC On Boot หากใช้โปรแกรม Arduino IDE
