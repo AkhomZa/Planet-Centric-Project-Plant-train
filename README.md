@@ -20,7 +20,7 @@
 
 ![Water station](picture/water_station.png)
 
-## Water station
+## Overview wiring diagram
 ![Water station](picture/Overview-wiring-diagram.jpg)
 
 ## Electronics Component
@@ -32,7 +32,7 @@
 
 - **Motor Driver:** DRV8833
 
-- **Lux sensor:** BH1750 (วัดความเข้มของแสง)
+- **Lux sensor:** BH1750 (วัดความเข้มของแสง) *ในรูปประกอบไม่ถูกต้อง
 
 - **Color sensor:** TCS34725 (สำหรับอ่านแถบสีคำสั่ง)
 
