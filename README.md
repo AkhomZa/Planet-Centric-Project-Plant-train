@@ -12,6 +12,35 @@
 
 จากปัญหาและแนวคิดข้างต้น จึงได้ออกแบบนวัตกรรม "กระถางต้นไม้เคลื่อนที่ได้" ซึ่งสามารถเคลื่อนย้ายตัวเองเพื่อหาตำแหน่งที่มีแสงเหมาะสม และสามารถวัดค่าต่างๆ ผ่านเซนเซอร์ส่วนกลางร่วมกันได้ ช่วยเพิ่มโอกาสในการเจริญเติบโตของพืช และยังลดต้นทุนในการติดตั้งระบบเซนเซอร์อีกด้วย
 
+## Plant train
+
 ![Plant train](picture/plant_train.png)
+
+## Electronics Component
+
+**"On Plant train"**
+
+
+**Microcontroller:** ESP32 C3 mini
+
+**Motor Driver:** DRV8833
+
+**Lux sensor:** BH1750 (วัดความเข้มของแสง)
+
+**Color sensor:** TCS34725 (สำหรับอ่านแถบสีคำสั่ง)
+
+**I2C Multiplexer:** TCA9548A (สำหรับขยายช่องสัญญาณ I2C)
+
+**Lithium Charging module:** USB TYPE-C charger TP4056 1A (สำหรับชาร์จแบตเตอรี่ลิเธียม 18650)
+
+**"On Water station"**
+
+**Microcontroller:** Arduino Uno
+
+**Water level non contack sensor:** XKCY25 (วัดระดับน้ำแบบไร้สัมผัส)
+
+**Hall effect magnetic sensor:** KY-035 (สำหรับตรวจเช็คการมาของรถไฟ)
+
+**Relay module:** 4 channel-Relay
 
 
