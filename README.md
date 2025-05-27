@@ -12,6 +12,6 @@
 
 จากปัญหาและแนวคิดข้างต้น จึงได้ออกแบบนวัตกรรม "กระถางต้นไม้เคลื่อนที่ได้" ซึ่งสามารถเคลื่อนย้ายตัวเองเพื่อหาตำแหน่งที่มีแสงเหมาะสม และสามารถวัดค่าต่างๆ ผ่านเซนเซอร์ส่วนกลางร่วมกันได้ ช่วยเพิ่มโอกาสในการเจริญเติบโตของพืช และยังลดต้นทุนในการติดตั้งระบบเซนเซอร์อีกด้วย
 
-![screenshot](file:///C:/Users/babyk/OneDrive/Pictures/Screenshots/Screenshot%202025-05-26%20190943.png)
+![App Screenshot](https://github.com/AkhomZa/Planet-Centric-Project-Plant-train/blob/main/picture/plant_train.pngg)
 
 
