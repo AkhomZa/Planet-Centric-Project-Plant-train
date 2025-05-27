@@ -32,7 +32,7 @@
 
 - **Motor Driver:** DRV8833
 
-- **Lux sensor:** BH1750 (วัดความเข้มของแสง) *ในรูปประกอบไม่ถูกต้อง
+- **Lux sensor:** BH1750 (วัดความเข้มของแสง)
 
 - **Color sensor:** TCS34725 (สำหรับอ่านแถบสีคำสั่ง)
 
@@ -40,10 +40,8 @@
 
 - **Lithium Charging module:** USB TYPE-C charger TP4056 1A (สำหรับชาร์จแบตเตอรี่ลิเธียม 18650)
 
-- **Micro switch**
+- **ฺBattery:** 186500 Lithium Battery
 
-- **Resistor:** 10K (สำหรับต่อ microswitch เพราะ ESP32 C3 ไม่มี Internal Pullup ในตัว)
-- 
 **"On Water station"**
 
 - **Microcontroller:** Arduino Uno
@@ -53,6 +51,28 @@
 - **Hall effect magnetic sensor:** KY-035 (สำหรับตรวจเช็คการมาของรถไฟ)
 
 - **Relay module:** 4 channel-Relay
+
+- **DC Water pump**
+
+- **Servo motor:** MG995 180 degree servo motor
+
+## Mechanics Part
+
+- **3D Print part**
+
+- **Shaft diameter:** 3 mm
+
+- **Bearing:** 603ZZ
+
+- **O-ring:** ID 19 mm 2 mm thickness
+
+- **Heat brass insert**
+
+- **Bolt&Nuts :** ส่วนใหญ่เป็นขนาด M3 ยาว 6-12 mm ขึ้นอยู่กับส่วนไหนใส่ได้ยาวแค่ไหน
+
+## อุปกรณ์ที่เหลือ
+
+- กระถางรดน้ำเอง แบบใช้หลักการกาลักน้ำ
 
 
 
